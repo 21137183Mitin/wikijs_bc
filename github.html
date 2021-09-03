@@ -1,0 +1,43 @@
+<!--
+title: Github
+description: Restore with github
+published: true
+date: 2021-09-03T16:44:52.214Z
+tags: github
+editor: ckeditor
+dateCreated: 2021-09-03T15:41:10.319Z
+-->
+
+<h3>Add the key to GitHub</h3>
+<ol>
+  <li>Create a new GitHub repository.</li>
+  <li>Click on the <strong>Settings</strong> tab.</li>
+  <li>Click on the <strong>Deploy Keys</strong> in the left navigation menu.</li>
+  <li>Click the <strong>Add deploy key</strong> button.</li>
+  <li>Enter a name of your choice for this key (e.g. wiki) and paste the contents of the public key generated earlier. <i>(file ending in </i><code><i>.pub</i></code><i>)</i></li>
+  <li>Make sure the <strong>Allow write access</strong> is checked.</li>
+  <li>Click the <strong>Add key</strong> button.</li>
+</ol>
+<h3>Configure Wiki.js</h3>
+<ol>
+  <li>In the Administration Area, click on <strong>Storage</strong> in the left navigation menu.</li>
+  <li>Make sure the <strong>Git</strong> storage target is checked.</li>
+  <li>Click on the <strong>Git</strong> tab.</li>
+  <li>Enter the following settings:<ul>
+      <li>Authentication Type: <code>ssh</code></li>
+      <li>Repository URI: <i>On your GitHub repository page, in the <strong>Code</strong> tab, click on the <strong>Clone or download</strong> green button and copy the URI shown below <strong>Clone with SSH</strong>.</i></li>
+      <li>Branch: <code>main</code></li>
+      <li>SSH Private Key Path: <i>The path to your private key generated earlier.</i></li>
+      <li>Username: <i>Empty</i></li>
+      <li>Password: <i>Empty</i></li>
+      <li>Default Author Email: <i>Should match your GitHub account email.</i></li>
+      <li>Default Author Name: <i>Should match your GitHub account name.</i></li>
+      <li>Local Repository Path: <i>Choose where the repo will be cloned locally or leave the default </i><code><i>./data/repo</i></code><i> value.</i></li>
+      <li>Verify SSL Certificate: <strong>On</strong></li>
+    </ul>
+  </li>
+  <li>Set the <strong>Sync Direction</strong> to <strong>Bi-directional</strong>.</li>
+  <li>Set the <strong>Sync Schedule</strong> to <strong>5 minutes</strong>.</li>
+  <li>Click the <strong>Apply Changes</strong> button at the top of the page.</li>
+  <li>Wait for the <strong>Status</strong> panel to update. A new entry for <strong>Git</strong> should appear in green. If the bar is red, it means you have an error in your configuration. Go back to the Git tab, fix the error and try again.</li>
+</ol>
